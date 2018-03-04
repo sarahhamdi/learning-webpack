@@ -1,3 +1,7 @@
+const HtmlWebPackPlugin = require('html-webpack-plugin');
+
+
+
 module.exports = {
   module: {
     // this an array of loaders we are using in our project
@@ -13,5 +17,12 @@ module.exports = {
         }
       }
     ]
-  }
+  },
+  plugins: [
+    // convention is to instantiate it with the "new" keyword
+    new HtmlWebPackPlugin({
+      template: "./src/index.html",
+      filename: "./index.html"
+    })
+  ]
 }
